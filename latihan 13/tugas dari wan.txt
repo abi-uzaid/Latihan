@@ -1,0 +1,145 @@
+Apa itu pengulangan (looping) dalam JavaScript? Berikan contoh sederhana.
+-perulangan itu adalah perintah untuk menbuat atau mengulang suatu data. sampai berapa banyak yg kita mau atau tentukan
+
+Apa perbedaan antara for loop dan while loop dalam JavaScript?
+-for loop itu jumlah nya sudah ditentukan sedangkan while loop itu tidak ditentukan berapa jumlah nya
+
+Buatlah sebuah program yang menggunakan for loop untuk menampilkan bilangan bulat dari 1 hingga 10.
+-cosnt i = 1
+	if( i <= 10){
+ 	i++ 
+}
+console.log(i);
+
+Buatlah sebuah program yang menggunakan while loop untuk menghitung mundur dari 10 hingga 1 dan menampilkan pesan di setiap iterasi.
+-const Number = 10;
+
+  while (Number >= 1) {
+  console.log("No. " + Number);
+  Number--;
+}
+
+Buatlah sebuah program yang menggunakan do-while loop untuk meminta pengguna memasukkan angka dan terus meminta sampai pengguna memasukkan angka yang lebih besar dari 10.
+-const Number = prompt("tuliskan angka yang anda inginkan: ")
+	if( Number < 10) {
+	 alert("angka yang anda kurang")
+	} else {
+	 alert("angka yang anda masukan sesuai")
+	}
+
+Buatlah sebuah program yang menggunakan for...in loop untuk menampilkan setiap properti dari sebuah objek.
+-const user = {
+  name: 'John',
+  age: 30,
+  gender: 'male'
+};
+
+for (const detail in user) {
+  console.log(`${detail}: ${user[detail]}`);
+}
+
+
+Buatlah sebuah program yang menggunakan for...of loop untuk menampilkan setiap nilai dari sebuah array.
+-const arr = [1, 2, 3, 4, 5];
+
+for (const value of arr) {
+  console.log(value);
+}
+
+
+Bagaimana cara menggunakan break statement dalam loop? Berikan contoh penggunaannya.
+-untuk meberhentikan loop atau membatasi sampai jumlah yang diinginkan tercapai\
+	contoh :
+	for (let i = 1; i <= 10; i++) {
+  	  if (i === 5) {
+    	  break;
+  	}
+  	console.log(i);
+	}
+
+Bagaimana cara menggunakan continue statement dalam loop? Berikan contoh penggunaannya.
+-for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) {
+    continue;
+  }
+  console.log(i);
+  }
+
+Bagaimana cara menggunakan nested loop (loop bersarang) dalam JavaScript? Berikan contoh penggunaannya.
+-for (let i = 1; i <= 5; i++) {
+  console.log(`Iterasi ke-${i}`);
+  for (let j = 1; j <= 3; j++) {
+    console.log(`  Sub iterasi ke-${j}`);
+  }
+  }
+
+Buatlah sebuah program yang menghitung jumlah bilangan genap dari 1 hingga 50, dan menampilkan hasilnya ke console.
+-const bilangan = 0;
+
+for (let i = 1; i <= 50; i++) {
+  if (i % 2 === 0) {
+    bilangan++;
+  }
+}
+
+console.log(`Jumlah bilangan genap dari 1 hingga 50 adalah: ${bilangan}`);
+
+Buatlah sebuah program yang meminta pengguna untuk memasukkan sebuah angka positif, dan kemudian menampilkan semua bilangan ganjil dari 1 hingga angka tersebut ke console.
+-let number = parseInt(prompt("Masukkan sebuah angka positif:"));
+	if (number <= 0) {
+ 	 console.log("Angka yang dimasukkan tidak valid.");
+	} else {
+	  for (let i = 1; i <= number; i++) {
+	    if (i % 2 !== 0) {
+	      console.log(i);
+	   }
+	  }
+	}
+
+Buatlah sebuah program yang meminta pengguna untuk memasukkan sebuah angka positif, dan kemudian menampilkan tabel perkalian dari 1 hingga 10 untuk angka tersebut ke console.
+-const number = prompt("Masukkan sebuah angka: ");
+  if(number <= 0) {
+  console.log("Angka yang dimasukkan bukan angka positif!");
+} else {
+  console.log("Tabel perkalian dari 1 hingga 10 untuk angka " + number + " adalah:");
+  for(let i = 1; i <= 10; i++) {
+    console.log(number + " x " + i + " = " + number*i);
+  }
+}
+
+Buatlah sebuah program yang meminta pengguna untuk memasukkan sebuah angka, dan kemudian menampilkan semua bilangan prima dari 1 hingga angka tersebut ke console.
+-const angka = parseInt(prompt("Masukkan sebuah angka: "));
+const bilanganPrima = [];
+
+for (let i = 2; i <= angka; i++) {
+  const prima = true;
+  const (let j = 2; j <= Math.sqrt(i); j++) {
+    if (i % j === 0) {
+      prima = false;
+      break;
+    }
+  }
+  if (prima) {
+    bilanganPrima.push(i);
+    }
+  }
+
+console.log("Bilangan prima dari 1 hingga " + angka + " adalah: " + bilanganPrima.join(", "));
+
+
+Buatlah sebuah program yang meminta pengguna untuk memasukkan sebuah kata atau kalimat, dan kemudian menampilkan setiap huruf dari input tersebut ke console, diikuti dengan jumlah kemunculannya dalam input tersebut.
+-const input = prompt("Masukkan kata atau kalimat:");
+
+const huruf = {};
+for (let i = 0; i < input.length; i++) {
+  const char = input.charAt(i);
+  if (huruf[char]) {
+    huruf[char]++;
+  } else {
+    huruf[char] = 1;
+  }
+}
+
+for (const char in huruf) {
+  console.log(char + ": " + huruf[char]);
+}
